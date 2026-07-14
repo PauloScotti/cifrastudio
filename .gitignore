@@ -1,0 +1,35 @@
+# Node
+node_modules/
+dist/
+.npm
+
+# Banco SQLite (dados locais)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Variáveis de ambiente (NUNCA versionar)
+.env
+.env.local
+.env.production
+
+# Build
+frontend/dist/
+
+# Drizzle meta (gerado automaticamente)
+drizzle/meta/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+*.suo
+*.user
+
+# Logs
+*.log
+npm-debug.log*

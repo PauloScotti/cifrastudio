@@ -1,0 +1,223 @@
+.loadingWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px;
+}
+
+.viewHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.songInfo {}
+
+.songTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.songArtist {
+  color: var(--text-muted);
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.controlGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 10px;
+}
+
+.controlLabel {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+.ctrlBtn {
+  width: 26px; height: 26px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+  font-family: 'IBM Plex Mono', monospace;
+  flex-shrink: 0;
+}
+.ctrlBtn:hover { background: var(--accent); color: #0d0d0d; border-color: var(--accent); }
+
+.ctrlVal {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 26px;
+  text-align: center;
+}
+
+/* Layout */
+.layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.cifraWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+}
+
+/* Cifra body */
+.cifraBody {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  line-height: 1;
+  overflow-x: auto;
+}
+
+.sectionLabel {
+  display: block;
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 18px 0 6px;
+}
+.sectionLabel:first-child { margin-top: 0; }
+
+.chordLine {
+  display: block;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.lyricLine {
+  display: block;
+  color: var(--text);
+  line-height: 1.8;
+  margin-bottom: 2px;
+}
+
+/* Tab */
+.tabSection {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 28px;
+  margin-top: 14px;
+}
+
+.tabTitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.tabBody {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--accent2);
+  background: var(--bg);
+  padding: 14px;
+  border-radius: 2px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Chord panel */
+.chordPanel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.chordPanelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.modeTabs {
+  display: flex;
+  gap: 4px;
+}
+
+.modeTab {
+  width: 30px; height: 30px;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.15s;
+}
+.modeTabActive {
+  background: rgba(200,151,58,.15);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.diagramGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 900px) {
+  .layout { flex-direction: column; }
+  .sidebar { width: 100%; position: static; }
+  .diagramGrid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .viewHeader { flex-direction: column; }
+  .controls { justify-content: flex-start; }
+  .diagramGrid { grid-template-columns: repeat(3, 1fr); }
+  .songTitle { font-size: 26px; }
+}
