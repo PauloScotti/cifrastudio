@@ -1,6 +1,32 @@
 # CifraStudio
 
-Sistema completo de cadastro e gestão de cifras musicais com controle de acesso por papéis, transposição de tom, capotraste, tablatura e diagramas de acordes para violão e teclado.
+Catálogo de cifras musicais para quem toca em grupo (igreja, banda, roda):
+cadastro com controle de acesso por papel, transposição de tom em tempo
+real e diagramas de acorde gerados a partir da própria cifra, não
+desenhados à mão — violão e teclado, para o músico que não lê os dois.
+
+- **Transposição funciona de verdade, não é só exibir texto diferente.**
+  Mudar o tom recalcula os diagramas de acorde junto — testado na cifra
+  "No Rancho Fundo" (tom original D, veja abaixo em E): os acordes do
+  corpo da cifra e os diagramas na lateral mudam juntos, sem reload.
+- **Diagramas de dois instrumentos por acorde, com um clique.** Casas,
+  cordas mutadas/abertas e pestanas no violão; teclas destacadas no
+  teclado — mesmo acorde, dois jeitos de tocar, no modal ampliado.
+- **RBAC checado na rota, não só escondido na UI.** ADMIN/EDITOR/VIEWER
+  validados no middleware de cada endpoint (`backend/src/middleware/auth.ts`),
+  não é só esconder botão no front.
+
+![Lista de cifras com busca, filtro por gênero e paginação](docs/screenshots/lista-cifras.png)
+![Visualizador com transposição de D para E — cifra e diagramas de acorde recalculados juntos](docs/screenshots/visualizador-transposicao.png)
+![Modal do acorde D ampliado, violão e teclado lado a lado](docs/screenshots/diagrama-acorde-modal.png)
+
+## Como as peças se encaixam
+
+```mermaid
+flowchart LR
+  FE["frontend\nReact + Vite"] --> API["backend\nExpress + JWT"]
+  API --> DB[("SQLite (libSQL)\nDrizzle ORM")]
+```
 
 ---
 
