@@ -44,6 +44,8 @@ export default function SongViewPage() {
 
   return (
     <div>
+      <div className={styles.readProgress} aria-hidden="true" />
+
       {/* Back */}
       <button className="btn btn-ghost btn-sm" onClick={() => navigate("/")} style={{ marginBottom: 20 }}>
         ← Voltar
